@@ -6,8 +6,8 @@ include 'functions.php';
  * @return string url
  */
 function get_google_url($ukey){
-    $host = 'http://www.google.com.hk';
-    $url = $host.'/search?ie=utf-8&hl=zh-CN&gl=en&source=hp&source=android-unknown&q='.$ukey;
+    $host = 'http://www.google.com';
+    $url = $host.'/search?ie=utf-8&hl=en-US&gl=en&source=hp&source=android-unknown&q='.$ukey;
     if(isset($_GET['hl'])){
         $query = http_build_query($_GET);
         $url = $host.'/search?'.$query;
