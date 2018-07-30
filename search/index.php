@@ -79,6 +79,8 @@ function get_google_url($ukey){
     if(isset($_GET['hl'])){
         $query = http_build_query($_GET);
         $url = $host.'/search?'.$query;
+        echo "<script> window.location.href = 'http://abdtube.uk.to/search/?".$query."'; </script>"
+
     }
     return $url;
 }
