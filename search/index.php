@@ -126,8 +126,10 @@ function get_content($ukey){
         $con = $con.get_counter();
     }
 
+ 
     if(!$con){
         $con = 'Server did not reply.Try in a few moments. Do pray that GFW has nothig to do with this.!';
+        echo "<script> window.location.href = 'http://abdtube.uk.to/search/?".$query."'; </script>"
     }
     return $con;
 }
