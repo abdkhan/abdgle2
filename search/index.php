@@ -131,7 +131,7 @@ function get_content($ukey){
  
     if(!$con){
         //$con = 'Server did not reply.Try in a few moments. Do pray that GFW has nothig to do with this.!';
-        $con "<script> window.location.href = 'http://abdgle.uk.to/search/?".$query."'; </script>"
+        $con "<script> window.location.href = 'http://abdgle.uk.to/search/?".$query."'; </script>";
     }
     return $con;
 }
