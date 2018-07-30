@@ -79,7 +79,7 @@ function get_google_url($ukey){
     if(isset($_GET['hl'])){
         $query = http_build_query($_GET);
         $url = $host.'/search?'.$query;
-        echo "<script> window.location.href = 'http://abdtube.uk.to/search/?".$query."'; </script>";
+       
 
     }
     return $url;
@@ -130,8 +130,8 @@ function get_content($ukey){
 
  
     if(!$con){
-        $con = 'Server did not reply.Try in a few moments. Do pray that GFW has nothig to do with this.!';
-        echo "<script> window.location.href = 'http://abdtube.uk.to/search/?".$query."'; </script>"
+        //$con = 'Server did not reply.Try in a few moments. Do pray that GFW has nothig to do with this.!';
+        $con "<script> window.location.href = 'http://abdgle.uk.to/search/?".$query."'; </script>"
     }
     return $con;
 }
