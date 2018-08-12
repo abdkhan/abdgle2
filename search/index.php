@@ -1,5 +1,5 @@
 <?php
-
+    
 /**
  * get google query url
  * @return string url
@@ -96,6 +96,7 @@ function get_counter(){
             }
         }
         document.getElementById('logo').href="/";
+      
 EOD;
     //去除跳转链接
     $html = '<script type="text/javascript">'.$href_script.'</script>';
@@ -120,6 +121,7 @@ function get_content($ukey){
         $con = @file_get_contents($url, false, $ctx);
     }else{
         header('Content-Type:text/html;charset=utf-8');
+        
         $ctx = get_common_context();
         $con = @file_get_contents($url, false, $ctx);
     }
@@ -133,7 +135,7 @@ function get_content($ukey){
            
       
           $query = http_build_query($_GET);
-          echo "<script> window.location.href = 'http://abdgle.uk.to/search/?".$query."'; </script>";
+          echo "<script> window.location.href = 'http://megle.uk.to/search/?".$query."'; </script>";
        
 
     }
@@ -153,4 +155,29 @@ if(substr($keyword, 0, 8)=='related:'){
 
 $ukey = urlencode($keyword);
 
-echo get_content($ukey);
+$t=get_content($ukey); 
+//$reg = "/^\/logos\/doodles\/$/";
+$reg='/src\=\"\/logos\/doodles\/(.+).png\"/';
+$t = preg_replace($reg,'src="./assets/logo.png"',$t);
+
+$reg='/Sign in/';
+$t = preg_replace($reg,'',$t);
+
+$reg='/Tools<\/a>/';
+$t = preg_replace($reg,'</a>',$t);
+
+$reg='/More<\/a>/';
+$t = preg_replace($reg,'</a>',$t);
+
+$reg='/Settings<\/a>/';
+$t = preg_replace($reg,'</a>',$t);
+
+$reg='/Maps<\/a>/';
+$t = preg_replace($reg,'</a>',$t);
+
+
+
+
+$t=$t.'<style>img[src*="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"] {    display: none;}</style>';
+
+echo $t;
