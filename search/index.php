@@ -160,6 +160,9 @@ $t=get_content($ukey);
 $reg='/src\=\"\/logos\/doodles\/(.+).png\"/';
 $t = preg_replace($reg,'src="./assets/logo.png"',$t);
 
+$reg='/src\=\"\/images\/branding\/(.+).png\"/';
+$t = preg_replace($reg,'src="./assets/logo.png"',$t);
+
 $reg='/Sign in/';
 $t = preg_replace($reg,'',$t);
 
